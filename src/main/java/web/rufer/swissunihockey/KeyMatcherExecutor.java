@@ -1,6 +1,6 @@
 package web.rufer.swissunihockey;
 
-public class KeyMatcher {
+public class KeyMatcherExecutor {
 
     public static void main(String[] args) {
 

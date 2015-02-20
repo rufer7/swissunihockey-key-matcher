@@ -19,8 +19,10 @@ public class KeyMatcher {
 
                 for (LocalDate date : mapOfTeam1.keySet()) {
                     if (mapOfTeam1.containsKey(date)) {
-                        if (mapOfTeam1.get(date).contains(i) && mapOfTeam2.get(date).contains(j)) {
-                            matchesPerCombination ++;
+                        if (mapOfTeam1.get(date) != null && mapOfTeam2.get(date) != null) {
+                            if (mapOfTeam1.get(date).contains(i) && mapOfTeam2.get(date).contains(j)) {
+                                matchesPerCombination++;
+                            }
                         }
                     }
                 }

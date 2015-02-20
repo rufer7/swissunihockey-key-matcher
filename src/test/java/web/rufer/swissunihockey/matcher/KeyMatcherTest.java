@@ -33,7 +33,7 @@ public class KeyMatcherTest {
     }
 
     @Test
-    public void findMatchesForTwoTeamsFindsExpectedMatches() {
+    public void findMatchesForTwoTeamsAndOneDateFindsExpectedMatches() {
         keyMapTeam1.put(matchingDate, gameScheduleKeysTeam1);
         keyMapTeam2.put(matchingDate, gameScheduleKeysTeam2);
         Team team1 = new Team(TEAM_NAME_1, nbrOfTeamsInLeague1, keyMapTeam1);

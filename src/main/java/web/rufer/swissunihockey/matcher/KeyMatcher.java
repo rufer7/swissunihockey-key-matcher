@@ -21,7 +21,7 @@ public class KeyMatcher {
 
                 for (LocalDate date : keysPerDateForLeague1.keySet()) {
                     if (keysPerDateForLeague1.containsKey(date)) {
-                        if (keysPerDateForLeague1.get(date) != null && keysPerDateForLeague2.get(date) != null) {
+                        if (keysForDateExistInBothLeagues(keysPerDateForLeague1, keysPerDateForLeague2, date)) {
                             if (keysPerDateForLeague1.get(date).contains(i) && keysPerDateForLeague2.get(date).contains(j)) {
                                 matchesPerCombination++;
                             }
@@ -32,5 +32,9 @@ public class KeyMatcher {
             }
         }
         return result;
+    }
+
+    private boolean keysForDateExistInBothLeagues(Map<LocalDate, List<Integer>> keysPerDateForLeague1, Map<LocalDate, List<Integer>> keysPerDateForLeague2, LocalDate date) {
+        return keysPerDateForLeague1.get(date) != null && keysPerDateForLeague2.get(date) != null;
     }
 }

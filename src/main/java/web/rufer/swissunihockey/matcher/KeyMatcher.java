@@ -1,7 +1,7 @@
 package web.rufer.swissunihockey.matcher;
 
 import web.rufer.swissunihockey.matcher.domain.MatchingResult;
-import web.rufer.swissunihockey.matcher.domain.Team;
+import web.rufer.swissunihockey.matcher.domain.League;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -9,18 +9,18 @@ import java.util.Map;
 
 public class KeyMatcher {
 
-    public MatchingResult findMatchesForTwoTeams(Team team1, Team team2) {
+    public MatchingResult findMatchesForTwoLeagues(League league1, League league2) {
         MatchingResult result = new MatchingResult();
-        for (int i = 0; i < team1.getNbrOfTeamsInLeague(); i++) {
-            for (int j = 0; j < team2.getNbrOfTeamsInLeague(); j++) {
+        for (int i = 0; i < league1.getNbrOfTeamsInLeague(); i++) {
+            for (int j = 0; j < league2.getNbrOfTeamsInLeague(); j++) {
                 int matchesPerCombination = 0;
-                Map<LocalDate, List<Integer>> mapOfTeam1 = team1.getTeamKeysWithHomeGamePerDate();
-                Map<LocalDate, List<Integer>> mapOfTeam2 = team2.getTeamKeysWithHomeGamePerDate();
+                Map<LocalDate, List<Integer>> keysPerDateForLeague1 = league1.getKeysWithHomeGamePerDate();
+                Map<LocalDate, List<Integer>> keysPerDateForLeague2 = league2.getKeysWithHomeGamePerDate();
 
-                for (LocalDate date : mapOfTeam1.keySet()) {
-                    if (mapOfTeam1.containsKey(date)) {
-                        if (mapOfTeam1.get(date) != null && mapOfTeam2.get(date) != null) {
-                            if (mapOfTeam1.get(date).contains(i) && mapOfTeam2.get(date).contains(j)) {
+                for (LocalDate date : keysPerDateForLeague1.keySet()) {
+                    if (keysPerDateForLeague1.containsKey(date)) {
+                        if (keysPerDateForLeague1.get(date) != null && keysPerDateForLeague2.get(date) != null) {
+                            if (keysPerDateForLeague1.get(date).contains(i) && keysPerDateForLeague2.get(date).contains(j)) {
                                 matchesPerCombination++;
                             }
                         }

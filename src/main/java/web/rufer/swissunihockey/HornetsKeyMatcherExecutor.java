@@ -2,7 +2,7 @@ package web.rufer.swissunihockey;
 
 import web.rufer.swissunihockey.matcher.KeyMatcher;
 import web.rufer.swissunihockey.matcher.domain.MatchingResult;
-import web.rufer.swissunihockey.matcher.domain.Team;
+import web.rufer.swissunihockey.matcher.domain.League;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -10,13 +10,43 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class KeyMatcherExecutor {
+public class HornetsKeyMatcherExecutor {
 
     public static void main(String[] args) {
         printResult(calculateHornetsMatches());
     }
 
     private static MatchingResult calculateHornetsMatches() {
+        League league1GF = createLeague1GF();
+        League leagueU21C = createLeagueU21C();
+
+        // Execute matcher
+        KeyMatcher keyMatcher = new KeyMatcher();
+        return keyMatcher.findMatchesForTwoLeagues(league1GF, leagueU21C);
+    }
+
+    private static League createLeagueU21C() {
+        // U21
+        Map<LocalDate, List<Integer>> u21Map = new HashMap();
+        u21Map.put(LocalDate.of(2015, 9, 26), Arrays.asList(0, 1, 2, 3));
+        u21Map.put(LocalDate.of(2015, 10, 03), Arrays.asList(7,5,4,6));
+        u21Map.put(LocalDate.of(2015, 10, 17), Arrays.asList(1,2,0,3));
+        u21Map.put(LocalDate.of(2015, 10, 24), Arrays.asList(5,3,4,0));
+        u21Map.put(LocalDate.of(2015, 11, 14), Arrays.asList(4,6,2,7));
+        u21Map.put(LocalDate.of(2015, 11, 21), Arrays.asList(5,3,1,6));
+        u21Map.put(LocalDate.of(2015, 12, 5), Arrays.asList(0,2,7,4));
+        u21Map.put(LocalDate.of(2015, 12, 12), Arrays.asList(4,5,6,7));
+        u21Map.put(LocalDate.of(2016, 1, 9), Arrays.asList(2,0,1,3));
+        u21Map.put(LocalDate.of(2016, 1, 16), Arrays.asList(6,4,7,5));
+        u21Map.put(LocalDate.of(2016, 1, 23), Arrays.asList(2,1,7,6));
+        u21Map.put(LocalDate.of(2016, 2, 13), Arrays.asList(3,5,0,1));
+        u21Map.put(LocalDate.of(2016, 2, 20), Arrays.asList(7,0,2,4));
+        u21Map.put(LocalDate.of(2016, 2, 27), Arrays.asList(1,3,6,5));
+
+        return new League("U21", 8, u21Map);
+    }
+
+    private static League createLeague1GF() {
         // Herren 1
         Map<LocalDate, List<Integer>> herren1Map = new HashMap();
         herren1Map.put(LocalDate.of(2015, 9, 19), Arrays.asList(0, 1, 2, 3, 4));
@@ -38,31 +68,7 @@ public class KeyMatcherExecutor {
         herren1Map.put(LocalDate.of(2016, 1, 23), Arrays.asList(4,9,6,7,8));
         herren1Map.put(LocalDate.of(2016, 1, 24), Arrays.asList(1,5,3,0,2));
 
-        Team herren1 = new Team("Herren 1", 10, herren1Map);
-
-
-        // U21
-        Map<LocalDate, List<Integer>> u21Map = new HashMap();
-        u21Map.put(LocalDate.of(2015, 9, 26), Arrays.asList(0,1,2,3));
-        u21Map.put(LocalDate.of(2015, 10, 03), Arrays.asList(7,5,4,6));
-        u21Map.put(LocalDate.of(2015, 10, 17), Arrays.asList(1,2,0,3));
-        u21Map.put(LocalDate.of(2015, 10, 24), Arrays.asList(5,3,4,0));
-        u21Map.put(LocalDate.of(2015, 11, 14), Arrays.asList(4,6,2,7));
-        u21Map.put(LocalDate.of(2015, 11, 21), Arrays.asList(5,3,1,6));
-        u21Map.put(LocalDate.of(2015, 12, 5), Arrays.asList(0,2,7,4));
-        u21Map.put(LocalDate.of(2015, 12, 12), Arrays.asList(4,5,6,7));
-        u21Map.put(LocalDate.of(2016, 1, 9), Arrays.asList(2,0,1,3));
-        u21Map.put(LocalDate.of(2016, 1, 16), Arrays.asList(6,4,7,5));
-        u21Map.put(LocalDate.of(2016, 1, 23), Arrays.asList(2,1,7,6));
-        u21Map.put(LocalDate.of(2016, 2, 13), Arrays.asList(3,5,0,1));
-        u21Map.put(LocalDate.of(2016, 2, 20), Arrays.asList(7,0,2,4));
-        u21Map.put(LocalDate.of(2016, 2, 27), Arrays.asList(1,3,6,5));
-
-        Team u21 = new Team("U21", 8, u21Map);
-
-        // Execute matcher
-        KeyMatcher keyMatcher = new KeyMatcher();
-        return keyMatcher.findMatchesForTwoTeams(herren1, u21);
+        return new League("Herren 1", 10, herren1Map);
     }
 
     private static void printResult(MatchingResult matchingResult) {

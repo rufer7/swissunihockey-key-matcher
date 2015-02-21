@@ -14,7 +14,7 @@ public class MatchingResult {
     /**
      * Set the amount of matches for a given combination
      *
-     * @param combination the key combination i.e. 0 1 (first digit for team1, second for team 2)
+     * @param combination the key combination i.e. 0 1 (first digit for league1, second for league 2)
      * @param amountOfMatches amount of matches for the given combination
      */
     public void setMatchForCombination(String combination, Integer amountOfMatches) {

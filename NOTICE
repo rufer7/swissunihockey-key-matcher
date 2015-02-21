@@ -10,16 +10,3 @@ mockito (https://code.google.com/p/mockito/) - MIT
 
 
 The JUnit depends on Java Hamcrest (http://hamcrest.org/JavaHamcrest/)
-
-
-Mockito license - MIT.
-
-Libraries used:
-
-Cglib - Apache License 2.0
-ASM - BSD license
-
-Mockito all distribution:
-
-Objenesis - MIT license
-Hamcrest - BSD license

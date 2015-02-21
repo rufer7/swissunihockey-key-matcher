@@ -66,7 +66,7 @@
                 <version>0.7.2.201409121644</version>
                 <configuration>
                     <excludes>
-                        <exclude>${project.basedir}/src/main/java/web/rufer/swissunihockey/HornetsKeyMatcherExecutor.class</exclude>
+                        <exclude>**/*Executor.*</exclude>
                     </excludes>
                 </configuration>
                 <executions>

@@ -29,6 +29,7 @@ public class MatchingPrinterTest {
         league1 = new League(LEAGUE_NAME_1, nbrOfTeamsInLeague, keysPerDateMapLeague1);
         league2 = new League(LEAGUE_NAME_2, nbrOfTeamsInLeague, keysPerDateMapLeague1);
         matchingResult.setMatchForCombination("0" + KeyMatcher.BLANKS + "1", 2);
+        matchingResult.setMatchForCombination("1" + KeyMatcher.BLANKS + "1", 1);
     }
 
     @Test
@@ -42,8 +43,11 @@ public class MatchingPrinterTest {
 
     private String createExpectedConsoleOutput() {
         return new StringBuilder().append(createExpectedHeader()).
-                append(System.getProperty("line.separator")).append("0").
-                append(KeyMatcher.BLANKS).append("1").
+                append(System.getProperty("line.separator")).
+                append("1").append(KeyMatcher.BLANKS).append("1").
+                append(MatchingPrinter.TWO_TABS).append(1).
+                append(System.getProperty("line.separator")).
+                append("0").append(KeyMatcher.BLANKS).append("1").
                 append(MatchingPrinter.TWO_TABS).append(2).toString();
     }
 

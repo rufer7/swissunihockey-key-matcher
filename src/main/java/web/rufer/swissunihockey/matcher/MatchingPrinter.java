@@ -17,8 +17,7 @@ public class MatchingPrinter {
      * @param matchingResult the result of matches (3rd column)
      */
     public static void printResult(League league1, League league2, MatchingResult matchingResult) {
-        String header = createHeader(league1, league2);
-        System.out.println(header);
+        System.out.println(createHeader(league1, league2));
 
         for (String combination : matchingResult.getMatchesPerCombination().keySet()) {
             System.out.println(combination + TWO_TABS + matchingResult.getMatchesPerCombination().get(combination));

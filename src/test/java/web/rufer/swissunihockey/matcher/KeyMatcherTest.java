@@ -16,11 +16,11 @@ import static org.junit.Assert.assertEquals;
 public class KeyMatcherTest {
 
     private static final String LEAGUE_NAME_1 = "league1";
-    private static final String LEAGUE_NAME_2 = "team2";
+    private static final String LEAGUE_NAME_2 = "league2";
     private static final int nbrOfTeamsInLeague1 = 3;
     private static final int nbrOfTeamsInLeague2 = 2;
-    private Map<LocalDate, List<Integer>> keyMapLeague1 = new HashMap();
-    private Map<LocalDate, List<Integer>> keyMapLeague2 = new HashMap();
+    private Map<LocalDate, List<Integer>> keysPerDateMapLeague1 = new HashMap();
+    private Map<LocalDate, List<Integer>> keysPerDateMapLeague2 = new HashMap();
     private LocalDate matchingDate = LocalDate.of(2015, 1, 1);
     private LocalDate matchingDate2 = LocalDate.of(2015, 1, 2);
     private LocalDate matchingDate3 = LocalDate.of(2015, 1, 3);
@@ -38,57 +38,57 @@ public class KeyMatcherTest {
 
     @Test
     public void findMatchesForTwoLeaguesAndOneEqualDateFindsExpectedMatches() {
-        keyMapLeague1.put(matchingDate, gameScheduleKeysLeague1);
-        keyMapLeague2.put(matchingDate, gameScheduleKeysLeague2);
-        League league1 = new League(LEAGUE_NAME_1, nbrOfTeamsInLeague1, keyMapLeague1);
-        League league2 = new League(LEAGUE_NAME_2, nbrOfTeamsInLeague2, keyMapLeague2);
+        keysPerDateMapLeague1.put(matchingDate, gameScheduleKeysLeague1);
+        keysPerDateMapLeague2.put(matchingDate, gameScheduleKeysLeague2);
+        League league1 = new League(LEAGUE_NAME_1, nbrOfTeamsInLeague1, keysPerDateMapLeague1);
+        League league2 = new League(LEAGUE_NAME_2, nbrOfTeamsInLeague2, keysPerDateMapLeague2);
         MatchingResult matchingResult = keyMatcher.findMatchesForTwoLeagues(league1, league2);
         assertEquals(createExpectedMatchingResultForTwoLeaguesAndOneEqualDate().getMatchesPerCombination(), matchingResult.getMatchesPerCombination());
     }
 
     private MatchingResult createExpectedMatchingResultForTwoLeaguesAndOneEqualDate() {
         MatchingResult matchingResult = new MatchingResult();
-        matchingResult.setMatchForCombination("0 0", 0);
-        matchingResult.setMatchForCombination("0 1", 1);
-        matchingResult.setMatchForCombination("1 0", 0);
-        matchingResult.setMatchForCombination("1 1", 1);
-        matchingResult.setMatchForCombination("2 0", 0);
-        matchingResult.setMatchForCombination("2 1", 1);
+        matchingResult.setMatchForCombination("0" + KeyMatcher.BLANKS + "0", 0);
+        matchingResult.setMatchForCombination("0" + KeyMatcher.BLANKS + "1", 1);
+        matchingResult.setMatchForCombination("1" + KeyMatcher.BLANKS + "0", 0);
+        matchingResult.setMatchForCombination("1" + KeyMatcher.BLANKS + "1", 1);
+        matchingResult.setMatchForCombination("2" + KeyMatcher.BLANKS + "0", 0);
+        matchingResult.setMatchForCombination("2" + KeyMatcher.BLANKS + "1", 1);
         return matchingResult;
     }
 
     @Test
     public void findMatchesForTwoLeaguesAndTwoDatesEqualFindsExpectedMatches() {
-        keyMapLeague1.put(matchingDate, gameScheduleKeysLeague1);
-        keyMapLeague1.put(matchingDate2, secondGameScheduleKeysLeague1);
-        keyMapLeague2.put(matchingDate, gameScheduleKeysLeague2);
-        keyMapLeague2.put(matchingDate2, secondGameScheduleKeysLeague2);
-        League league1 = new League(LEAGUE_NAME_1, nbrOfTeamsInLeague1, keyMapLeague1);
-        League league2 = new League(LEAGUE_NAME_2, nbrOfTeamsInLeague2, keyMapLeague2);
+        keysPerDateMapLeague1.put(matchingDate, gameScheduleKeysLeague1);
+        keysPerDateMapLeague1.put(matchingDate2, secondGameScheduleKeysLeague1);
+        keysPerDateMapLeague2.put(matchingDate, gameScheduleKeysLeague2);
+        keysPerDateMapLeague2.put(matchingDate2, secondGameScheduleKeysLeague2);
+        League league1 = new League(LEAGUE_NAME_1, nbrOfTeamsInLeague1, keysPerDateMapLeague1);
+        League league2 = new League(LEAGUE_NAME_2, nbrOfTeamsInLeague2, keysPerDateMapLeague2);
         MatchingResult matchingResult = keyMatcher.findMatchesForTwoLeagues(league1, league2);
         assertEquals(createExpectedMatchingResultForTwoLeaguesAndTwoEqualDates().getMatchesPerCombination(), matchingResult.getMatchesPerCombination());
     }
 
     private MatchingResult createExpectedMatchingResultForTwoLeaguesAndTwoEqualDates() {
         MatchingResult matchingResult = new MatchingResult();
-        matchingResult.setMatchForCombination("0 0", 0);
-        matchingResult.setMatchForCombination("0 1", 1);
-        matchingResult.setMatchForCombination("1 0", 1);
-        matchingResult.setMatchForCombination("1 1", 2);
-        matchingResult.setMatchForCombination("2 0", 0);
-        matchingResult.setMatchForCombination("2 1", 1);
+        matchingResult.setMatchForCombination("0" + KeyMatcher.BLANKS + "0", 0);
+        matchingResult.setMatchForCombination("0" + KeyMatcher.BLANKS + "1", 1);
+        matchingResult.setMatchForCombination("1" + KeyMatcher.BLANKS + "0", 1);
+        matchingResult.setMatchForCombination("1" + KeyMatcher.BLANKS + "1", 2);
+        matchingResult.setMatchForCombination("2" + KeyMatcher.BLANKS + "0", 0);
+        matchingResult.setMatchForCombination("2" + KeyMatcher.BLANKS + "1", 1);
         return matchingResult;
     }
 
     @Test
     public void findMatchesForTwoLeaguesAndDifferentDatesFindsExpectedMatches() {
-        keyMapLeague1.put(matchingDate, gameScheduleKeysLeague1);
-        keyMapLeague1.put(matchingDate2, secondGameScheduleKeysLeague1);
-        keyMapLeague2.put(matchingDate, gameScheduleKeysLeague2);
-        keyMapLeague2.put(matchingDate2, secondGameScheduleKeysLeague2);
-        keyMapLeague2.put(matchingDate3, secondGameScheduleKeysLeague2);
-        League league1 = new League(LEAGUE_NAME_1, nbrOfTeamsInLeague1, keyMapLeague1);
-        League league2 = new League(LEAGUE_NAME_2, nbrOfTeamsInLeague2, keyMapLeague2);
+        keysPerDateMapLeague1.put(matchingDate, gameScheduleKeysLeague1);
+        keysPerDateMapLeague1.put(matchingDate2, secondGameScheduleKeysLeague1);
+        keysPerDateMapLeague2.put(matchingDate, gameScheduleKeysLeague2);
+        keysPerDateMapLeague2.put(matchingDate2, secondGameScheduleKeysLeague2);
+        keysPerDateMapLeague2.put(matchingDate3, secondGameScheduleKeysLeague2);
+        League league1 = new League(LEAGUE_NAME_1, nbrOfTeamsInLeague1, keysPerDateMapLeague1);
+        League league2 = new League(LEAGUE_NAME_2, nbrOfTeamsInLeague2, keysPerDateMapLeague2);
         MatchingResult matchingResult = keyMatcher.findMatchesForTwoLeagues(league1, league2);
         assertEquals(createExpectedMatchingResultForTwoLeaguesAndTwoEqualDates().getMatchesPerCombination(), matchingResult.getMatchesPerCombination());
     }

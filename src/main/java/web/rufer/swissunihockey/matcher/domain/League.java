@@ -23,6 +23,12 @@ public class League {
         this.keysWithHomeGamePerDate = homeGameKeysPerDate;
     }
 
+    /**
+     * Adds keys, which have home game, to the given date of the leagues map
+     *
+     * @param date the game schedule date
+     * @param keys the keys with home game at the given date
+     */
     public void addKeysWithHomeGameForDate(LocalDate date, List<Integer> keys) {
         this.keysWithHomeGamePerDate.put(date, keys);
     }

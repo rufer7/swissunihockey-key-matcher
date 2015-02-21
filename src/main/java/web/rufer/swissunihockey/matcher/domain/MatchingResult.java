@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class MatchingResult {
 
-    Map<String, Integer> matchesPerCombination;
+    private Map<String, Integer> matchesPerCombination;
 
     public MatchingResult() {
         this.matchesPerCombination = new HashMap<String, Integer>();

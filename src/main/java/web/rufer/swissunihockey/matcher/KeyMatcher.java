@@ -9,6 +9,8 @@ import java.util.Map;
 
 public class KeyMatcher {
 
+    public static final String BLANKS = "       ";
+
     public MatchingResult findMatchesForTwoLeagues(League league1, League league2) {
         MatchingResult result = new MatchingResult();
         for (int i = 0; i < league1.getNbrOfTeamsInLeague(); i++) {
@@ -26,7 +28,7 @@ public class KeyMatcher {
                         }
                     }
                 }
-                result.setMatchForCombination(i + " " + j, matchesPerCombination);
+                result.setMatchForCombination(i + BLANKS + j, matchesPerCombination);
             }
         }
         return result;

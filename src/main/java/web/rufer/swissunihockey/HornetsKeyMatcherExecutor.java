@@ -33,7 +33,7 @@ public class HornetsKeyMatcherExecutor {
 
     private static League createLeagueU21C() {
         // U21
-        Map<LocalDate, List<Integer>> u21cMap = new HashMap();
+        Map<LocalDate, List<Integer>> u21cMap = new HashMap<>();
         u21cMap.put(LocalDate.of(2015, 9, 26), Arrays.asList(0, 1, 2, 3));
         u21cMap.put(LocalDate.of(2015, 10, 03), Arrays.asList(7, 5, 4, 6));
         u21cMap.put(LocalDate.of(2015, 10, 17), Arrays.asList(1, 2, 0, 3));
@@ -54,7 +54,7 @@ public class HornetsKeyMatcherExecutor {
 
     private static League createLeague1GF() {
         // Herren 1
-        Map<LocalDate, List<Integer>> herren1LGF = new HashMap();
+        Map<LocalDate, List<Integer>> herren1LGF = new HashMap<>();
         herren1LGF.put(LocalDate.of(2015, 9, 19), Arrays.asList(0, 1, 2, 3, 4));
         herren1LGF.put(LocalDate.of(2015, 9, 26), Arrays.asList(8, 7, 5, 6, 9));
         herren1LGF.put(LocalDate.of(2015, 10, 3), Arrays.asList(2, 1, 3, 4, 9));

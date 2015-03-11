@@ -21,7 +21,7 @@ public class MatchingPrinterTest {
     private static final String LEAGUE_NAME_1 = "league1";
     private static final String LEAGUE_NAME_2 = "league2";
     private static final int nbrOfTeamsInLeague = 4;
-    private Map<LocalDate, List<Integer>> keysPerDateMapLeague1 = new HashMap();
+    private Map<LocalDate, List<Integer>> keysPerDateMapLeague1 = new HashMap<>();
     private MatchingResult matchingResult = new MatchingResult();
 
     @Before

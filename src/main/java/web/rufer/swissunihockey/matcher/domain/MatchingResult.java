@@ -8,7 +8,7 @@ public class MatchingResult {
     private Map<String, Integer> matchesPerCombination;
 
     public MatchingResult() {
-        this.matchesPerCombination = new HashMap<String, Integer>();
+        this.matchesPerCombination = new HashMap<>();
     }
 
     /**

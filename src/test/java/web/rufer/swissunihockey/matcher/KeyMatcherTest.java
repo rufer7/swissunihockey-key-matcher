@@ -19,8 +19,8 @@ public class KeyMatcherTest {
     private static final String LEAGUE_NAME_2 = "league2";
     private static final int nbrOfTeamsInLeague1 = 3;
     private static final int nbrOfTeamsInLeague2 = 2;
-    private Map<LocalDate, List<Integer>> keysPerDateMapLeague1 = new HashMap();
-    private Map<LocalDate, List<Integer>> keysPerDateMapLeague2 = new HashMap();
+    private Map<LocalDate, List<Integer>> keysPerDateMapLeague1 = new HashMap<>();
+    private Map<LocalDate, List<Integer>> keysPerDateMapLeague2 = new HashMap<>();
     private LocalDate matchingDate = LocalDate.of(2015, 1, 1);
     private LocalDate matchingDate2 = LocalDate.of(2015, 1, 2);
     private LocalDate matchingDate3 = LocalDate.of(2015, 1, 3);

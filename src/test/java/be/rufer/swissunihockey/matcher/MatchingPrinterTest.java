@@ -1,4 +1,4 @@
-package be.rufer.swissuihockey.matcher;
+package be.rufer.swissunihockey.matcher;
 
 import org.junit.Before;
 import org.junit.Test;

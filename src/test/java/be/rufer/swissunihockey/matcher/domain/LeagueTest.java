@@ -1,4 +1,4 @@
-package be.rufer.swissuihockey.matcher.domain;
+package be.rufer.swissunihockey.matcher.domain;
 
 import org.junit.Test;
 import be.rufer.swissunihockey.matcher.domain.League;

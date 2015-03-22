@@ -1,4 +1,4 @@
-package web.rufer.swissunihockey.matcher.domain;
+package be.rufer.swissunihockey.matcher.domain;
 
 import java.time.LocalDate;
 import java.util.List;

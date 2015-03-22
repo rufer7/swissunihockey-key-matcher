@@ -1,9 +1,11 @@
-package web.rufer.swissunihockey.matcher;
+package be.rufer.swissuihockey.matcher;
 
 import org.junit.Before;
 import org.junit.Test;
-import web.rufer.swissunihockey.matcher.domain.League;
-import web.rufer.swissunihockey.matcher.domain.MatchingResult;
+import be.rufer.swissunihockey.matcher.KeyMatcher;
+import be.rufer.swissunihockey.matcher.MatchingPrinter;
+import be.rufer.swissunihockey.matcher.domain.League;
+import be.rufer.swissunihockey.matcher.domain.MatchingResult;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;

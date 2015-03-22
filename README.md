@@ -5,4 +5,4 @@
 
 A Java application for getting the best matches for the game schedule key plan.
 
-A sample, how to use the key-matcher, can be found under `src/main/java/web/rufer/swissunihockey/HornetsKeyMatcherExecutor.java`
+A sample, how to use the key-matcher, can be found under `src/main/java/be/rufer/swissunihockey/HornetsKeyMatcherExecutor.java`

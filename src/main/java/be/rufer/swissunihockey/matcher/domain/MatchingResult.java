@@ -1,4 +1,4 @@
-package web.rufer.swissunihockey.matcher.domain;
+package be.rufer.swissunihockey.matcher.domain;
 
 import java.util.HashMap;
 import java.util.Map;

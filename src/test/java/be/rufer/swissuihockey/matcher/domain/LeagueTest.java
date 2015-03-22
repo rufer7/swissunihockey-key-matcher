@@ -1,6 +1,7 @@
-package web.rufer.swissunihockey.matcher.domain;
+package be.rufer.swissuihockey.matcher.domain;
 
 import org.junit.Test;
+import be.rufer.swissunihockey.matcher.domain.League;
 
 import java.time.LocalDate;
 import java.util.*;

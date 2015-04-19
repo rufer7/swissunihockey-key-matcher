@@ -6,7 +6,6 @@ Marc Rufer (https://github.com/rufer7)
 
 The swissunihockey-key-matcher depends on:
 junit (http://junit.org/) - Apache License 2.0
-mockito (https://code.google.com/p/mockito/) - MIT
 
 
 The JUnit depends on Java Hamcrest (http://hamcrest.org/JavaHamcrest/)

@@ -50,20 +50,20 @@ public class HornetsKeyMatcherExecutor {
         // U21
         Map<LocalDate, List<Integer>> u21cMap = new HashMap<>();
         // Date, Keys that play at home at this date
-        u21cMap.put(LocalDate.of(2016, 9, 1), Arrays.asList(0, 1, 2, 3));
-        u21cMap.put(LocalDate.of(2016, 9, 8), Arrays.asList(7, 5, 4, 6));
-        u21cMap.put(LocalDate.of(2016, 10, 15), Arrays.asList(1, 2, 0, 3));
-        u21cMap.put(LocalDate.of(2016, 10, 22), Arrays.asList(5, 3, 4, 0));
-        u21cMap.put(LocalDate.of(2016, 11, 12), Arrays.asList(4, 6, 2, 7));
-        u21cMap.put(LocalDate.of(2016, 11, 19), Arrays.asList(5, 3, 1, 6));
-        u21cMap.put(LocalDate.of(2016, 11, 26), Arrays.asList(0, 2, 7, 4));
-        u21cMap.put(LocalDate.of(2016, 12, 3), Arrays.asList(4, 5, 6, 7));
-        u21cMap.put(LocalDate.of(2016, 12, 17), Arrays.asList(2, 0, 1, 3));
-        u21cMap.put(LocalDate.of(2017, 1, 14), Arrays.asList(6, 4, 7, 5));
-        u21cMap.put(LocalDate.of(2017, 1, 21), Arrays.asList(2, 1, 7, 6));
-        u21cMap.put(LocalDate.of(2017, 2, 11), Arrays.asList(3, 5, 0, 1));
-        u21cMap.put(LocalDate.of(2017, 2, 18), Arrays.asList(7, 0, 2, 4));
-        u21cMap.put(LocalDate.of(2017, 2, 26), Arrays.asList(1, 3, 6, 5));
+        u21cMap.put(LocalDate.of(2017, 9, 16), Arrays.asList(1, 2, 3, 4));
+        u21cMap.put(LocalDate.of(2017, 10, 1), Arrays.asList(8, 6, 5, 7));
+        u21cMap.put(LocalDate.of(2017, 10, 7), Arrays.asList(2, 3, 1, 4));
+        u21cMap.put(LocalDate.of(2017, 10, 21), Arrays.asList(6, 4, 5, 1));
+        u21cMap.put(LocalDate.of(2017, 11, 4), Arrays.asList(5, 7, 3, 8));
+        u21cMap.put(LocalDate.of(2017, 11, 11), Arrays.asList(6, 4, 2, 7));
+        u21cMap.put(LocalDate.of(2017, 11, 25), Arrays.asList(1, 3, 8, 5));
+        u21cMap.put(LocalDate.of(2017, 12, 2), Arrays.asList(5, 6, 7, 8));
+        u21cMap.put(LocalDate.of(2017, 12, 16), Arrays.asList(3, 1, 2, 4));
+        u21cMap.put(LocalDate.of(2017, 1, 13), Arrays.asList(7, 5, 8, 6));
+        u21cMap.put(LocalDate.of(2018, 1, 20), Arrays.asList(3, 2, 8, 7));
+        u21cMap.put(LocalDate.of(2018, 2, 03), Arrays.asList(4, 6, 1, 2));
+        u21cMap.put(LocalDate.of(2018, 2, 17), Arrays.asList(8, 1, 3, 5));
+        u21cMap.put(LocalDate.of(2018, 3, 3), Arrays.asList(2, 4, 7, 6));
 
         return new League(U_21C, NBR_OF_TEAMS_IN_U21C, u21cMap);
     }
@@ -72,28 +72,28 @@ public class HornetsKeyMatcherExecutor {
         // Herren 1
         Map<LocalDate, List<Integer>> herren1LGF = new HashMap<>();
         // Date, Keys that play at home at this date
-        herren1LGF.put(LocalDate.of(2016, 9, 17), Arrays.asList(1, 3, 5, 7, 9, 11));
-        herren1LGF.put(LocalDate.of(2016, 9, 24), Arrays.asList(10, 8, 6, 4, 12, 2));
-        herren1LGF.put(LocalDate.of(2016, 9, 25), Arrays.asList(1, 3, 5, 7, 12, 11));
-        herren1LGF.put(LocalDate.of(2016, 10, 1), Arrays.asList(10, 8, 6, 4, 9, 2));
-        herren1LGF.put(LocalDate.of(2016, 10, 8), Arrays.asList(1, 3, 5, 4, 12, 11));
-        herren1LGF.put(LocalDate.of(2016, 10, 15), Arrays.asList(10, 8, 1, 7, 9, 2));
-        herren1LGF.put(LocalDate.of(2016, 10, 16), Arrays.asList(5, 3, 6, 4, 12, 11));
-        herren1LGF.put(LocalDate.of(2016, 10, 22), Arrays.asList(10, 8, 5, 7, 9, 2));
-        herren1LGF.put(LocalDate.of(2016, 10, 29), Arrays.asList(1, 10, 6, 4, 12, 11));
-        herren1LGF.put(LocalDate.of(2016, 11, 12), Arrays.asList(1, 3, 5, 7, 9, 2));
-        herren1LGF.put(LocalDate.of(2016, 11, 13), Arrays.asList(10, 8, 6, 4, 12, 11));
-        herren1LGF.put(LocalDate.of(2016, 11, 19), Arrays.asList(2, 4, 6, 8, 10, 12));
-        herren1LGF.put(LocalDate.of(2016, 11, 26), Arrays.asList(7, 5, 3, 11, 1, 9));
-        herren1LGF.put(LocalDate.of(2016, 12, 3), Arrays.asList(9, 8, 10, 2, 4, 6));
-        herren1LGF.put(LocalDate.of(2016, 12, 4), Arrays.asList(3, 11, 12, 1, 7, 5));
-        herren1LGF.put(LocalDate.of(2016, 12, 17), Arrays.asList(7, 2, 9, 6, 8, 10));
-        herren1LGF.put(LocalDate.of(2017, 1, 7), Arrays.asList(12, 4, 6, 5, 3, 11));
-        herren1LGF.put(LocalDate.of(2017, 1, 8), Arrays.asList(1, 7, 8, 10, 2, 9));
-        herren1LGF.put(LocalDate.of(2017, 1, 14), Arrays.asList(6, 1, 3, 11, 12, 4));
-        herren1LGF.put(LocalDate.of(2017, 1, 21), Arrays.asList(3, 8, 2, 9, 7, 5));
-        herren1LGF.put(LocalDate.of(2017, 1, 28), Arrays.asList(10, 11, 12, 4, 6 ,8));
-        herren1LGF.put(LocalDate.of(2017, 1, 29), Arrays.asList(2, 9, 7, 5, 3, 1));
+        herren1LGF.put(LocalDate.of(2017, 9, 16), Arrays.asList(1, 3, 5, 7, 9, 11));
+        herren1LGF.put(LocalDate.of(2017, 9, 23), Arrays.asList(10, 8, 6, 4, 12, 2));
+        herren1LGF.put(LocalDate.of(2017, 9, 30), Arrays.asList(1, 3, 5, 7, 12, 11));
+        herren1LGF.put(LocalDate.of(2017, 10, 1), Arrays.asList(10, 8, 6, 4, 9, 2));
+        herren1LGF.put(LocalDate.of(2017, 10, 7), Arrays.asList(1, 3, 5, 4, 12, 11));
+        herren1LGF.put(LocalDate.of(2017, 10, 14), Arrays.asList(10, 8, 1, 7, 9, 2));
+        herren1LGF.put(LocalDate.of(2017, 10, 15), Arrays.asList(5, 3, 6, 4, 12, 11));
+        herren1LGF.put(LocalDate.of(2017, 10, 21), Arrays.asList(10, 8, 5, 7, 9, 2));
+        herren1LGF.put(LocalDate.of(2017, 11, 11), Arrays.asList(1, 10, 6, 4, 12, 11));
+        herren1LGF.put(LocalDate.of(2017, 11, 12), Arrays.asList(1, 3, 5, 7, 9, 2));
+        herren1LGF.put(LocalDate.of(2017, 11, 18), Arrays.asList(10, 8, 6, 4, 12, 11));
+        herren1LGF.put(LocalDate.of(2017, 11, 25), Arrays.asList(2, 4, 6, 8, 10, 12));
+        herren1LGF.put(LocalDate.of(2017, 12, 2), Arrays.asList(7, 5, 3, 11, 1, 9));
+        herren1LGF.put(LocalDate.of(2017, 12, 9), Arrays.asList(9, 8, 10, 2, 4, 6));
+        herren1LGF.put(LocalDate.of(2017, 12, 16), Arrays.asList(3, 11, 12, 1, 7, 5));
+        herren1LGF.put(LocalDate.of(2017, 12, 17), Arrays.asList(7, 2, 9, 6, 8, 10));
+        herren1LGF.put(LocalDate.of(2018, 1, 6), Arrays.asList(12, 4, 6, 5, 3, 11));
+        herren1LGF.put(LocalDate.of(2018, 1, 13), Arrays.asList(1, 7, 8, 10, 2, 9));
+        herren1LGF.put(LocalDate.of(2018, 1, 20), Arrays.asList(6, 1, 3, 11, 12, 4));
+        herren1LGF.put(LocalDate.of(2018, 1, 21), Arrays.asList(3, 8, 2, 9, 7, 5));
+        herren1LGF.put(LocalDate.of(2018, 2, 10), Arrays.asList(10, 11, 12, 4, 6 ,8));
+        herren1LGF.put(LocalDate.of(2018, 2, 11), Arrays.asList(2, 9, 7, 5, 3, 1));
 
         return new League(HERREN_1LGF, NBR_OF_TEAMS_IN_H1LGF, herren1LGF);
     }

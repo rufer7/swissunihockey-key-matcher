@@ -33,6 +33,7 @@ public class ResultPrinterTest {
 
     private League league1;
     private League league2;
+    private static final String LINE_SEPARATOR = "line.separator";
     private static final String LEAGUE_NAME_1 = "league1";
     private static final String LEAGUE_NAME_2 = "league2";
     private static final int nbrOfTeamsInLeague = 4;
@@ -59,14 +60,14 @@ public class ResultPrinterTest {
     private String createExpectedConsoleOutput() {
         return new StringBuilder()
                 .append(createExpectedHeader())
-                .append(System.getProperty("line.separator"))
+                .append(System.getProperty(LINE_SEPARATOR))
                 .append("1")
                 .append(Constants.TAB)
                 .append("1")
                 .append(Constants.TAB)
                 .append(Constants.TAB)
                 .append(1)
-                .append(System.getProperty("line.separator"))
+                .append(System.getProperty(LINE_SEPARATOR))
                 .append("0")
                 .append(Constants.TAB)
                 .append("1")

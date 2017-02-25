@@ -45,6 +45,7 @@ public class ResultPrinterTest {
         league1 = new League(LEAGUE_NAME_1, nbrOfTeamsInLeague, keysPerDateMapLeague);
         league2 = new League(LEAGUE_NAME_2, nbrOfTeamsInLeague, keysPerDateMapLeague);
         matchingResult.setMatchForCombination("1" + Constants.TAB + "1", 1);
+        matchingResult.setMatchForCombination("1" + Constants.TAB + "0", 3);
         matchingResult.setMatchForCombination("0" + Constants.TAB + "1", 2);
     }
 
@@ -61,12 +62,21 @@ public class ResultPrinterTest {
         return new StringBuilder()
                 .append(createExpectedHeader())
                 .append(System.getProperty(LINE_SEPARATOR))
+                .append("1")
+                .append(Constants.TAB)
+                .append("0")
+                .append(Constants.TAB)
+                .append(Constants.TAB)
+                .append(3)
+
+                .append(System.getProperty(LINE_SEPARATOR))
                 .append("0")
                 .append(Constants.TAB)
                 .append("1")
                 .append(Constants.TAB)
                 .append(Constants.TAB)
                 .append(2)
+
                 .append(System.getProperty(LINE_SEPARATOR))
                 .append("1")
                 .append(Constants.TAB)

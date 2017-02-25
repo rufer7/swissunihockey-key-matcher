@@ -60,10 +60,10 @@ public class ResultPrinterTest {
         return new StringBuilder().append(createExpectedHeader()).
                 append(System.getProperty("line.separator")).
                 append("1").append(KeyMatcher.BLANKS).append("1").
-                append(ResultPrinter.TWO_TABS).append(1).
+                append(ResultPrinter.TAB).append(1).
                 append(System.getProperty("line.separator")).
                 append("0").append(KeyMatcher.BLANKS).append("1").
-                append(ResultPrinter.TWO_TABS).append(2).toString();
+                append(ResultPrinter.TAB).append(2).toString();
     }
 
     @Test
@@ -74,7 +74,7 @@ public class ResultPrinterTest {
 
     private String createExpectedHeader() {
         return new StringBuilder().append(LEAGUE_NAME_1).
-                append(ResultPrinter.SPACES).append(LEAGUE_NAME_2).
-                append(ResultPrinter.SPACES).append(ResultPrinter.MATCHES).toString();
+                append(ResultPrinter.TAB).append(LEAGUE_NAME_2).
+                append(ResultPrinter.TAB).append(ResultPrinter.MATCHES).toString();
     }
 }

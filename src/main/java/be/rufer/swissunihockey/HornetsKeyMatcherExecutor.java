@@ -16,7 +16,7 @@
 package be.rufer.swissunihockey;
 
 import be.rufer.swissunihockey.matcher.KeyMatcher;
-import be.rufer.swissunihockey.matcher.MatchingPrinter;
+import be.rufer.swissunihockey.matcher.ResultPrinter;
 import be.rufer.swissunihockey.matcher.domain.MatchingResult;
 import be.rufer.swissunihockey.matcher.domain.League;
 
@@ -43,7 +43,7 @@ public class HornetsKeyMatcherExecutor {
 
         KeyMatcher keyMatcher = new KeyMatcher();
         MatchingResult matchingResult = keyMatcher.findMatchesForTwoLeagues(league1GF, leagueU21C);
-        MatchingPrinter.printResult(league1GF, leagueU21C, matchingResult);
+        ResultPrinter.print(league1GF, leagueU21C, matchingResult);
     }
 
     private static League createLeagueU21C() {

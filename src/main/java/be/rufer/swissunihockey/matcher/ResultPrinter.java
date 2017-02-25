@@ -18,7 +18,7 @@ package be.rufer.swissunihockey.matcher;
 import be.rufer.swissunihockey.matcher.domain.League;
 import be.rufer.swissunihockey.matcher.domain.MatchingResult;
 
-public class MatchingPrinter {
+public class ResultPrinter {
 
     public static final String MATCHES = "Matches";
     public static final String SPACES = "  ";
@@ -31,7 +31,7 @@ public class MatchingPrinter {
      * @param league2 league 2 (it's keys appear in the second column)
      * @param matchingResult the result of matches (3rd column)
      */
-    public static void printResult(League league1, League league2, MatchingResult matchingResult) {
+    public static void print(League league1, League league2, MatchingResult matchingResult) {
         System.out.println(createHeader(league1, league2));
 
         for (String combination : matchingResult.getMatchesPerCombination().keySet()) {

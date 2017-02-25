@@ -17,8 +17,6 @@ package be.rufer.swissunihockey.matcher;
 
 import org.junit.Before;
 import org.junit.Test;
-import be.rufer.swissunihockey.matcher.KeyMatcher;
-import be.rufer.swissunihockey.matcher.MatchingPrinter;
 import be.rufer.swissunihockey.matcher.domain.League;
 import be.rufer.swissunihockey.matcher.domain.MatchingResult;
 
@@ -31,7 +29,7 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
-public class MatchingPrinterTest {
+public class ResultPrinterTest {
 
     private League league1;
     private League league2;
@@ -54,7 +52,7 @@ public class MatchingPrinterTest {
         ByteArrayOutputStream boas = new ByteArrayOutputStream();
         PrintStream ps = new PrintStream(boas);
         System.setOut(ps);
-        MatchingPrinter.printResult(league1, league2, matchingResult);
+        ResultPrinter.print(league1, league2, matchingResult);
         assertEquals(createExpectedConsoleOutput().trim(), boas.toString().trim());
     }
 
@@ -62,21 +60,21 @@ public class MatchingPrinterTest {
         return new StringBuilder().append(createExpectedHeader()).
                 append(System.getProperty("line.separator")).
                 append("1").append(KeyMatcher.BLANKS).append("1").
-                append(MatchingPrinter.TWO_TABS).append(1).
+                append(ResultPrinter.TWO_TABS).append(1).
                 append(System.getProperty("line.separator")).
                 append("0").append(KeyMatcher.BLANKS).append("1").
-                append(MatchingPrinter.TWO_TABS).append(2).toString();
+                append(ResultPrinter.TWO_TABS).append(2).toString();
     }
 
     @Test
     public void createHeader() {
-        String header = MatchingPrinter.createHeader(league1, league2);
+        String header = ResultPrinter.createHeader(league1, league2);
         assertEquals(createExpectedHeader(), header);
     }
 
     private String createExpectedHeader() {
         return new StringBuilder().append(LEAGUE_NAME_1).
-                append(MatchingPrinter.SPACES).append(LEAGUE_NAME_2).
-                append(MatchingPrinter.SPACES).append(MatchingPrinter.MATCHES).toString();
+                append(ResultPrinter.SPACES).append(LEAGUE_NAME_2).
+                append(ResultPrinter.SPACES).append(ResultPrinter.MATCHES).toString();
     }
 }

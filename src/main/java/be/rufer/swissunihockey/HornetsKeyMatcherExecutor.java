@@ -28,17 +28,17 @@ import java.util.Map;
 
 public class HornetsKeyMatcherExecutor {
 
-    private static final String U_21C = "U21C";
-    private static final String HERREN_1LGF = "H1L GF";
+    private static final String U21C = "U21C";
+    private static final String H1_GF = "H1 GF";
     private static final int NBR_OF_TEAMS_IN_U21C = 8;
-    private static final int NBR_OF_TEAMS_IN_H1LGF = 12;
+    private static final int NBR_OF_TEAMS_IN_H1GF = 12;
 
     public static void main(String[] args) {
         calculateAndPrintHornetsMatches();
     }
 
     private static void calculateAndPrintHornetsMatches() {
-        League league1GF = createLeague1GF();
+        League league1GF = createLeagueH1GF();
         League leagueU21C = createLeagueU21C();
 
         KeyMatcher keyMatcher = new KeyMatcher();
@@ -65,10 +65,10 @@ public class HornetsKeyMatcherExecutor {
         u21cMap.put(LocalDate.of(2018, 2, 17), Arrays.asList(8, 1, 3, 5));
         u21cMap.put(LocalDate.of(2018, 3, 3), Arrays.asList(2, 4, 7, 6));
 
-        return new League(U_21C, NBR_OF_TEAMS_IN_U21C, u21cMap);
+        return new League(U21C, NBR_OF_TEAMS_IN_U21C, u21cMap);
     }
 
-    private static League createLeague1GF() {
+    private static League createLeagueH1GF() {
         // Herren 1
         Map<LocalDate, List<Integer>> herren1LGF = new HashMap<>();
         // Date, Keys that play at home at this date
@@ -95,6 +95,6 @@ public class HornetsKeyMatcherExecutor {
         herren1LGF.put(LocalDate.of(2018, 2, 10), Arrays.asList(10, 11, 12, 4, 6 ,8));
         herren1LGF.put(LocalDate.of(2018, 2, 11), Arrays.asList(2, 9, 7, 5, 3, 1));
 
-        return new League(HERREN_1LGF, NBR_OF_TEAMS_IN_H1LGF, herren1LGF);
+        return new League(H1_GF, NBR_OF_TEAMS_IN_H1GF, herren1LGF);
     }
 }

@@ -28,7 +28,7 @@ public class LeagueTest {
     private static final String LEAGUE_NAME = "sampleLeague";
     private static final int nbrOfTeamsInLeague = 4;
     private Map<LocalDate, List<Integer>> emptyKeysPerDateMap = new HashMap<>();
-    private List<Integer> gameScheduleKey = Arrays.asList(1);
+    private List<Integer> gameScheduleKey = Collections.singletonList(1);
     private LocalDate sampleDate = LocalDate.of(2015, 1, 1);
 
     @Test

@@ -36,34 +36,44 @@ public class ResultPrinterTest {
     private static final String LEAGUE_NAME_1 = "league1";
     private static final String LEAGUE_NAME_2 = "league2";
     private static final int nbrOfTeamsInLeague = 4;
-    private Map<LocalDate, List<Integer>> keysPerDateMapLeague1 = new HashMap<>();
+    private Map<LocalDate, List<Integer>> keysPerDateMapLeague = new HashMap<>();
     private MatchingResult matchingResult = new MatchingResult();
 
     @Before
     public void init() {
-        league1 = new League(LEAGUE_NAME_1, nbrOfTeamsInLeague, keysPerDateMapLeague1);
-        league2 = new League(LEAGUE_NAME_2, nbrOfTeamsInLeague, keysPerDateMapLeague1);
-        matchingResult.setMatchForCombination("0" + KeyMatcher.BLANKS + "1", 2);
-        matchingResult.setMatchForCombination("1" + KeyMatcher.BLANKS + "1", 1);
+        league1 = new League(LEAGUE_NAME_1, nbrOfTeamsInLeague, keysPerDateMapLeague);
+        league2 = new League(LEAGUE_NAME_2, nbrOfTeamsInLeague, keysPerDateMapLeague);
+        matchingResult.setMatchForCombination("0" + Constants.TAB + "1", 2);
+        matchingResult.setMatchForCombination("1" + Constants.TAB + "1", 1);
     }
 
     @Test
     public void printResultPrintsExpectedResultToConsole() {
-        ByteArrayOutputStream boas = new ByteArrayOutputStream();
-        PrintStream ps = new PrintStream(boas);
-        System.setOut(ps);
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PrintStream printStream = new PrintStream(outputStream);
+        System.setOut(printStream);
         ResultPrinter.print(league1, league2, matchingResult);
-        assertEquals(createExpectedConsoleOutput().trim(), boas.toString().trim());
+        assertEquals(createExpectedConsoleOutput().trim(), outputStream.toString().trim());
     }
 
     private String createExpectedConsoleOutput() {
-        return new StringBuilder().append(createExpectedHeader()).
-                append(System.getProperty("line.separator")).
-                append("1").append(KeyMatcher.BLANKS).append("1").
-                append(ResultPrinter.TAB).append(1).
-                append(System.getProperty("line.separator")).
-                append("0").append(KeyMatcher.BLANKS).append("1").
-                append(ResultPrinter.TAB).append(2).toString();
+        return new StringBuilder()
+                .append(createExpectedHeader())
+                .append(System.getProperty("line.separator"))
+                .append("1")
+                .append(Constants.TAB)
+                .append("1")
+                .append(Constants.TAB)
+                .append(Constants.TAB)
+                .append(1)
+                .append(System.getProperty("line.separator"))
+                .append("0")
+                .append(Constants.TAB)
+                .append("1")
+                .append(Constants.TAB)
+                .append(Constants.TAB)
+                .append(2)
+                .toString();
     }
 
     @Test
@@ -73,8 +83,12 @@ public class ResultPrinterTest {
     }
 
     private String createExpectedHeader() {
-        return new StringBuilder().append(LEAGUE_NAME_1).
-                append(ResultPrinter.TAB).append(LEAGUE_NAME_2).
-                append(ResultPrinter.TAB).append(ResultPrinter.MATCHES).toString();
+        return new StringBuilder()
+                .append(LEAGUE_NAME_1)
+                .append(Constants.TAB)
+                .append(LEAGUE_NAME_2)
+                .append(Constants.TAB)
+                .append(ResultPrinter.MATCHES)
+                .toString();
     }
 }

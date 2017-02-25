@@ -24,8 +24,6 @@ import java.util.Map;
 
 public class KeyMatcher {
 
-    public static final String BLANKS = "       ";
-
     /**
      * Finds the matches for all combinations of two given leagues
      *
@@ -37,7 +35,7 @@ public class KeyMatcher {
         MatchingResult result = new MatchingResult();
         for (int i = 0; i < league1.getNbrOfTeamsInLeague(); i++) {
             for (int j = 0; j < league2.getNbrOfTeamsInLeague(); j++) {
-                result.setMatchForCombination(i + BLANKS + j, calculateMatchesPerCombination(league1, league2, i, j));
+                result.setMatchForCombination(i + Constants.TAB + j, calculateMatchesPerCombination(league1, league2, i, j));
             }
         }
         return result;

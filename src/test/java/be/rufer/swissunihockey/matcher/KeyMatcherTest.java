@@ -22,10 +22,7 @@ import be.rufer.swissunihockey.matcher.domain.MatchingResult;
 import be.rufer.swissunihockey.matcher.domain.League;
 
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 
@@ -41,8 +38,8 @@ public class KeyMatcherTest {
     private LocalDate matchingDate2 = LocalDate.of(2015, 1, 2);
     private LocalDate matchingDate3 = LocalDate.of(2015, 1, 3);
     private List<Integer> gameScheduleKeysLeague1 = Arrays.asList(0, 1, 2);
-    private List<Integer> gameScheduleKeysLeague2 = Arrays.asList(1);
-    private List<Integer> secondGameScheduleKeysLeague1 = Arrays.asList(1);
+    private List<Integer> gameScheduleKeysLeague2 = Collections.singletonList(1);
+    private List<Integer> secondGameScheduleKeysLeague1 = Collections.singletonList(1);
     private List<Integer> secondGameScheduleKeysLeague2 = Arrays.asList(0, 1);
 
     private KeyMatcher keyMatcher;
@@ -64,12 +61,12 @@ public class KeyMatcherTest {
 
     private MatchingResult createExpectedMatchingResultForTwoLeaguesAndOneEqualDate() {
         MatchingResult matchingResult = new MatchingResult();
-        matchingResult.setMatchForCombination("0" + KeyMatcher.BLANKS + "0", 0);
-        matchingResult.setMatchForCombination("0" + KeyMatcher.BLANKS + "1", 1);
-        matchingResult.setMatchForCombination("1" + KeyMatcher.BLANKS + "0", 0);
-        matchingResult.setMatchForCombination("1" + KeyMatcher.BLANKS + "1", 1);
-        matchingResult.setMatchForCombination("2" + KeyMatcher.BLANKS + "0", 0);
-        matchingResult.setMatchForCombination("2" + KeyMatcher.BLANKS + "1", 1);
+        matchingResult.setMatchForCombination("0" + Constants.TAB + "0", 0);
+        matchingResult.setMatchForCombination("0" + Constants.TAB + "1", 1);
+        matchingResult.setMatchForCombination("1" + Constants.TAB + "0", 0);
+        matchingResult.setMatchForCombination("1" + Constants.TAB + "1", 1);
+        matchingResult.setMatchForCombination("2" + Constants.TAB + "0", 0);
+        matchingResult.setMatchForCombination("2" + Constants.TAB + "1", 1);
         return matchingResult;
     }
 
@@ -87,12 +84,12 @@ public class KeyMatcherTest {
 
     private MatchingResult createExpectedMatchingResultForTwoLeaguesAndTwoEqualDates() {
         MatchingResult matchingResult = new MatchingResult();
-        matchingResult.setMatchForCombination("0" + KeyMatcher.BLANKS + "0", 0);
-        matchingResult.setMatchForCombination("0" + KeyMatcher.BLANKS + "1", 1);
-        matchingResult.setMatchForCombination("1" + KeyMatcher.BLANKS + "0", 1);
-        matchingResult.setMatchForCombination("1" + KeyMatcher.BLANKS + "1", 2);
-        matchingResult.setMatchForCombination("2" + KeyMatcher.BLANKS + "0", 0);
-        matchingResult.setMatchForCombination("2" + KeyMatcher.BLANKS + "1", 1);
+        matchingResult.setMatchForCombination("0" + Constants.TAB + "0", 0);
+        matchingResult.setMatchForCombination("0" + Constants.TAB + "1", 1);
+        matchingResult.setMatchForCombination("1" + Constants.TAB + "0", 1);
+        matchingResult.setMatchForCombination("1" + Constants.TAB + "1", 2);
+        matchingResult.setMatchForCombination("2" + Constants.TAB + "0", 0);
+        matchingResult.setMatchForCombination("2" + Constants.TAB + "1", 1);
         return matchingResult;
     }
 

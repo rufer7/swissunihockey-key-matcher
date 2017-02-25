@@ -21,7 +21,6 @@ import be.rufer.swissunihockey.matcher.domain.MatchingResult;
 public class ResultPrinter {
 
     public static final String MATCHES = "Matches";
-    public static final String TAB = "\t";
 
     /**
      * Prints result to console
@@ -34,7 +33,7 @@ public class ResultPrinter {
         System.out.println(createHeader(league1, league2));
 
         for (String combination : matchingResult.getMatchesPerCombination().keySet()) {
-            System.out.println(combination + TAB + matchingResult.getMatchesPerCombination().get(combination));
+            System.out.println(combination + Constants.TAB + Constants.TAB + matchingResult.getMatchesPerCombination().get(combination));
         }
     }
 
@@ -47,12 +46,11 @@ public class ResultPrinter {
      * @return the header as string
      */
     static String createHeader(League league1, League league2) {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(league1.getName());
-        stringBuilder.append(TAB);
-        stringBuilder.append(league2.getName());
-        stringBuilder.append(TAB);
-        stringBuilder.append(MATCHES);
-        return stringBuilder.toString();
+        return new StringBuilder()
+                .append(league1.getName())
+                .append(Constants.TAB)
+                .append(league2.getName())
+                .append(Constants.TAB)
+                .append(MATCHES).toString();
     }
 }

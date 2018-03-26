@@ -42,6 +42,7 @@ public class HornetsKeyMatcherExecutor {
     private static void calculateAndPrintHornetsMatches() {
         League league1GF = createLeague1GF();
         League leagueU21C = createLeagueU21C();
+        League league2GF = createLeague2GF();
 
         KeyMatcher keyMatcher = new KeyMatcher();
         MatchingResult matchingResult = keyMatcher.findMatchesForTwoLeagues(league1GF, leagueU21C);

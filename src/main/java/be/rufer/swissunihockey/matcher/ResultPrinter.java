@@ -25,8 +25,8 @@ public class ResultPrinter {
     /**
      * Prints result to console
      *
-     * @param league1 league 1 (it's keys appear in the first column)
-     * @param league2 league 2 (it's keys appear in the second column)
+     * @param league1 league 1 (its keys appear in the first column)
+     * @param league2 league 2 (its keys appear in the second column)
      * @param matchingResult the result of matches (3rd column)
      */
     public static void print(League league1, League league2, MatchingResult matchingResult) {
